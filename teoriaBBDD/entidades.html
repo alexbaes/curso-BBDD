@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entidades | BBDD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">Inicio</a>
+    </header>
+    <h1>Qué es una entidad</h1>
+    <p>
+      En el contexto de las bases de datos relacionales, una entidad se refiere
+      a un objeto o concepto distinguible y único sobre el cual deseas almacenar
+      información. Puede ser una persona, un lugar, un objeto o cualquier otro
+      elemento que sea relevante para tu sistema.
+    </p>
+    <p>
+      En términos más técnicos, una entidad se representa como una tabla en una
+      base de datos relacional, donde cada fila de la tabla representa una
+      instancia individual de esa entidad. Por ejemplo, si estás creando una
+      base de datos para una aplicación de gestión de empleados, la entidad
+      "Empleado" podría tener atributos como nombre, apellido, número de
+      identificación, fecha de contratación, etc.
+    </p>
+    <p>
+      Las entidades en una base de datos están diseñadas para ser únicas e
+      identificables, y suelen tener atributos que describen características
+      específicas de esa entidad. Las entidades pueden estar relacionadas entre
+      sí a través de claves primarias y foráneas para establecer conexiones y
+      relaciones dentro de la base de datos.
+    </p>
+    <p>
+      Para entenderlo de otra forma, una entidad es un objeto del mundo real,
+      que pretendemos controlar dentro del sistema de información Por ejemplo,
+      una persona, un producto, una cuenta, una factura, una compra.
+    </p>
+    <hr />
+    <h2>Tipos de entidades</h2>
+    <p>Principalmente existen tres tipos, 'de datos','catálogos' y 'pivotes'</p>
+    <h3>Tipos de entidades: 'de datos'</h3>
+    <p>
+      Las entidades de datos son aquellas que van a almacenar la información en
+      el sistema. En ellas vamos a almacenar, capturar, interactuar con los
+      datos. Por ejemplo, en un sistema gestor de escuelas, vamos a tener
+      personas, y habrá una entidad donde almacena todos los atributos de las
+      personas, como el nombre, apellido, dirección, etc.
+    </p>
+    <h3>Tipos de entidades: 'catálogos'</h3>
+    <p>
+      Las entidades de catálogos, los registros que tenga esta entidad ya han de
+      estar precapturados. Siguiendo con el ejemplo, en el sistema escolar habrá
+      muchas personas, pero puede haber tres tipos de personas, estudiantes,
+      administrativo y profesores. Entonces, en la entidad personas podría haber
+      un campo que se llame 'tipo', y estos datos se estarían cogiendo de un
+      'catálogo' o una entidad que funcione como catálogo donde ya van a estar
+      precargadas estas opciones. Otro ejemplo sencillo sería cuando en un
+      formulario se despliega la opción de elegir un país, de todos los que hay,
+      ya están precargados.
+    </p>
+    <h3>Tipos de entidades: 'pivotes'</h3>
+    <p>
+      Las entidades de pivotes, son las que nos van a permitir hacer relación
+      entre dos o más entidades. Ayudan a mantener la consistencia e integridad
+      en un modelo relacional, se suelen llamar entidades de enlace o de
+      asociación. Siguiendo con el ejemplo anterior, una persona profesor, va a
+      estar asignado a cierta materia. Por tanto, esta entidad relaciona la
+      entidad persona con materia.
+    </p>
+  </body>
+</html>

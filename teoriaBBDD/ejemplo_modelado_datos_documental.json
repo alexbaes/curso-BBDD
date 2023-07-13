@@ -1,0 +1,64 @@
+{
+  "carreras": [
+    {
+      "carrera_id": "1",
+      "nombre": "Carrera We Run Mexico 2011",
+      "tipo_carrera": "10K",
+      "fecha": "2011-11-26",
+      "tiempo": "56:60",
+      "mejor_tiempo": "false",
+      "altitud": "2250",
+      "lugar": "CDMX",
+      "pais": "México",
+      "foto": "img/carrera-01.jpg"
+    },
+    {
+      "carrera_id": "2",
+      "nombre": "Carrera We Run Mexico 2011",
+      "tipo_carrera": "10K",
+      "fecha": "2011-11-26",
+      "tiempo": "56:60",
+      "mejor_tiempo": "false",
+      "altitud": "2250",
+      "lugar": "CDMX",
+      "pais": "México",
+      "foto": "img/carrera-01.jpg"
+    },
+    {
+      "carrera_id": "3",
+      "nombre": "Carrera We Run Mexico 2011",
+      "tipo_carrera": "10K",
+      "fecha": "2011-11-26",
+      "tiempo": "56:60",
+      "mejor_tiempo": "false",
+      "altitud": "2250",
+      "lugar": "CDMX",
+      "pais": "México",
+      "foto": "img/carrera-01.jpg"
+    },
+    {
+      "carrera_id": "4",
+      "nombre": "Carrera We Run Mexico 2011",
+      "tipo_carrera": "10K",
+      "fecha": "2011-11-26",
+      "tiempo": "56:60",
+      "mejor_tiempo": "false",
+      "altitud": "2250",
+      "lugar": "CDMX",
+      "pais": "México",
+      "foto": "img/carrera-01.jpg"
+    },
+    {
+      "carrera_id": "5",
+      "nombre": "Carrera We Run Mexico 2011",
+      "tipo_carrera": "10K",
+      "fecha": "2011-11-26",
+      "tiempo": "56:60",
+      "mejor_tiempo": "false",
+      "altitud": "2250",
+      "lugar": "CDMX",
+      "pais": "México",
+      "foto": "img/carrera-01.jpg"
+    }
+  ]
+}

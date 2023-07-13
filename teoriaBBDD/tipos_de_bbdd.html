@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipos | BBDD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">Inicio</a>
+    </header>
+    <h1>Tipos de bases de datos</h1>
+    <p>
+      Existen principalmente tres tipos de bases de datos, aunque son dos las
+      que se suelen utilizar más
+    </p>
+    <h2>Qué son los tipos de datos relacionales</h2>
+    <p>
+      Son las más comunes y se basan en el modelo relacional. Organizan los
+      datos en tablas estructuradas con filas y columnas interrelacionadas.
+      Utilizan claves primarias y foráneas para establecer relaciones entre las
+      tablas. Ejemplos populares de sistemas de gestión de bases de datos
+      relacionales son MySQL, Oracle, PostgreSQL, MariaDB, SQLServer.
+    </p>
+    <p>
+      Se caracterizan por ser una coleción ordenada de registros que se van a
+      organizar en un conjunto de tablas. Una tabla es el elemento principal de
+      una base de datos relacional, es muy parecida a una hoja de cálcula. Los
+      registros de información se organizan en filas y columnas. Las tablas es
+      relacionan entre si, y para acceder a los datos utilizamos el lenguaje de
+      consulta estructurada (SQL, Structure Query Language).
+    </p>
+    <p>
+      Con SQL vamos a poder obtener y alterar los datos de una forma organizada,
+      teniendo en cuenta la estructura de la base de datos a la cual se está
+      trabajando.
+    </p>
+    <p>
+      Estas tablas también se organizan a través de identificadores, es decir,
+      cada tabla, elige a un campo como identificador único, y es el que estable
+      la relacion con las otras tablas de la base de datos.
+    </p>
+    <h2>Qué son los tipos de datos no relacionales</h2>
+    <p>
+      Son bases de datos que no siguen el modelo relacional y proporcionan una
+      forma más flexible de almacenar y recuperar datos. No requieren un esquema
+      fijo y permiten manejar grandes volúmenes de datos no estructurados o
+      semi-estructurados. Algunos tipos de bases de datos NoSQL son las de tipo
+      clave-valor, de documentos, de columnas amplias y de grafos. Ejemplos de
+      sistemas NoSQL incluyen MongoDB, Cassandra y Redis.
+    </p>
+    <p>
+      Se caracterizan por estar diseñadas para modelar datos con estructuras más
+      específicas y no necesitan que los datos se relacionen los unos con los
+      otros. Cada unidad funciona de forma independiente, y son más sencillas a
+      la hora de acceder y ordenar.
+    </p>
+    <p>
+      Al no tener una estructura definida y exacta como las base de datos
+      relacionales, se puede tener redundancia de datos (datos repetidos). Esto
+      lo permiten porque lo que buscan estas bases de datos es mejorar el
+      rendimiento y se prioriza el acceso por sobre la integridad de los datos.
+      Intenta mostrar la mayor cantidad de datos en el menor tiempo posible.
+    </p>
+    <p>
+      El formato más popular que se utiliza en este tipo de bases de datos es el
+      de un documento. Un documento es un objeto organizado en claves-valores
+      para acceder a la información de manera sencilla.
+    </p>
+    <p>
+      A las bases de datos no relacionales se les asocia el concpeto de NoSQL,
+      pero en realidad no quiere decir NO SQL, sino Not Only SQL, es decir, no
+      existe solamente bases de datos en SQL.
+    </p>
+    <hr />
+    <h2>Qué son los tipos de datos orientados a objetos</h2>
+    <p>
+      No se suelen utilizar tanto. Están diseñadas para almacenar y manipular
+      objetos complejos, como imágenes, audio y video. Estas bases de datos
+      permiten guardar los objetos directamente en la base de datos sin
+      necesidad de descomponerlos en datos más simples. Ejemplos de bases de
+      datos orientadas a objetos son db4o y Versant.
+    </p>
+  </body>
+</html>

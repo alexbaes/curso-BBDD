@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elección de BBDD | BBDD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">Inicio</a>
+    </header>
+    <h1>Como elegir un tipo de BBDD u otro</h1>
+    <p>
+      Si se quiere desarrollar una aplicación de tipo contable, inventario de
+      productos, información de clientes, se adaptará mejor una base de datos de
+      tipo relacional. Habrá más de una tabla que tenga relación con el resto.
+    </p>
+    <p>
+      Si se quiere desarrollar una aplicación que se necesite almacenar los
+      datos, no necesiten estar relacionados y no tengamos la certeza de la
+      estructura, debemos elegir una base de datos de tipo no relacional.
+    </p>
+    <p>
+      Ejemplo, una base de datos para almacenar las estadísticas de
+      comportamiento de un usuario al visitar un sitio, o los datos biométricos.
+      La información puede variar de una persona a otra, dependiendo de sus
+      dinámicas con el sitio, de su salud.
+    </p>
+    <p>
+      Otro ejemplo, la creación de una galería de fotos en Instagram. Cada
+      usuario puede subir la cantidad de fotos que quiera (respetando el límite
+      de 10), pero uno puede subir 5, otro 2 y otro 10, no están obligados a
+      subir 10 foto s.
+    </p>
+    <p>
+      Otro ejemplo, las estadísticas del progreso de una partida de videojuego.
+      La información se almacena pero no se relaciona entre sí.
+    </p>
+    <hr />
+    <h3>Resumiendo</h3>
+    <p>Se aconseja escoger SQL</p>
+    <ul>
+      <li>
+        Mejor opción cuando necesitas mantener relaciones complejas entre los
+        datos.
+      </li>
+      <li>
+        Ideal para aplicaciones con una estructura de datos definida y
+        constante.
+      </li>
+      <li>
+        Útil cuando la consistencia y la integridad de los datos son críticas.
+      </li>
+      <li>
+        Adecuado para aplicaciones que requieren consultas complejas y
+        transacciones ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad).
+      </li>
+      <li>
+        Bueno para garantizar la coherencia de los datos en entornos de alta
+        concurrencia.
+      </li>
+    </ul>
+    <p>Se aconseja escoger NoSQL</p>
+    <ul>
+      <li>
+        Recomendado cuando tienes una gran cantidad de datos no estructurados o
+        semiestructurados.
+      </li>
+      <li>
+        Útil en casos donde la escalabilidad y el rendimiento son prioritarios.
+      </li>
+      <li>
+        Adecuado para aplicaciones que requieren alta velocidad de
+        lectura/escritura y flexibilidad en el esquema de datos.
+      </li>
+      <li>
+        Ideal para entornos de desarrollo ágiles donde los requisitos de datos
+        pueden cambiar rápidamente.
+      </li>
+      <li>
+        Bueno para almacenar datos de tipo clave-valor, documentos, columnas
+        amplias o grafos.
+      </li>
+    </ul>
+  </body>
+</html>

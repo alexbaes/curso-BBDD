@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relaciones | BBDD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">Inicio</a>
+    </header>
+    <h1>Qué son las relaciones en las BBDD</h1>
+    <p>
+      Las relaciones son las asociaciones que hacemos entre las entidades, para
+      poder recuperar y vincular datos.
+    </p>
+    <p>
+      Las relaciones en una base de datos son el vínculo que se establece entre
+      distintos elementos de las tablas que la conforman. En el caso de las
+      bases de datos relacionales, las relaciones son fundamentales para
+      establecer concordancias en las asignaciones y garantizar la integridad
+      referencial de la información (que los datos no se modifiquen o varíen
+      durante el proceso). Gracias a las relaciones se mantiene una lógica y
+      consistencia entre todos los datos que almacena
+    </p>
+    <h2>Tipos de relaciones</h2>
+    <h3>Relación 1 a 1</h3>
+    <p>
+      Una relación uno a uno (1:1) se produce cuando la relación se realiza solo
+      entre un registro de una tabla con un registro de otra. En esta relación,
+      los campos establecidos como primary key de ambas tablas están enlazados
+      1. Los datos se relacionan según la cardinalidad de los mismos. Por lo
+      tanto, un dato con una cardinalidad 1:1 significa que por cada dato de la
+      tabla A existe una relación única e inequívoca con un dato de la tabla B
+    </p>
+    <p>
+      Ejemplo, una entidad 'persona' está relacionada con una única entidad
+      'perfil', una persona es un estudiante, o una persona es un profesor. La
+      relación entre una persona y su DNI, o un coche y su matrícula.
+    </p>
+    <h3>Relación 1 a muchos</h3>
+    <p>
+      En las bases de datos relacionales, se produce una relación de uno a
+      muchos cuando un registro primario en una tabla puede potencialmente hacer
+      referencia a varios registros secundarios en otra tabla.
+    </p>
+    <p>
+      Ejemplo, una entidad 'empresa' puede estar relacionada con varias
+      entidades 'factura'.
+    </p>
+    <h3>Relación muchos a muchos</h3>
+    <p>
+      Una relación de muchos a muchos se refiere a una relación entre tablas en
+      una base de datos cuando una fila principal en una tabla contiene varias
+      filas secundarias en la segunda tabla, y viceversa.
+    </p>
+    <p>
+      Hay que revisar las relaciones muchos a muchos en las bases de datos,
+      mirar si el sistema está bien optimizado, ya que pude indicar que
+      necesitemes volver a normalizar el sistema de bases de datos, o que es
+      mejor utilizar un sistema no relacional.
+    </p>
+    <p>
+      Ejemplo, una entidad 'cliente' puede estar relacionada con varias
+      entidades 'productos' y la entidad 'producto' puede estar relacionada con
+      varias entidades 'clientes'.
+    </p>
+  </body>
+</html>

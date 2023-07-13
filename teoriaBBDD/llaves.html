@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Llaves | BBDD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">Inicio</a>
+    </header>
+    <h1>Qué son las llaves en las BBDD</h1>
+    <p>
+      Una llave en una base de datos es un identificador que va a permitir hacer
+      único a un registro de informaicón. Existen dos tipos pricipalmente, las
+      llaves primarias y las llaves foraneas.
+    </p>
+    <p>
+      Las llaves son elementos dentro de una tabla que permiten identificar de
+      manera única una entidad de un conjunto de entidades. En el caso de las
+      bases de datos relacionales, las llaves primarias y foráneas permiten
+      entrelazar las distintas tablas.
+    </p>
+
+    <p>
+      Una <b>llave primaria</b> es un atributo o conjunto de atributos que
+      identifican de forma única una fila en una tabla. Va a registrar un
+      registro como único dentro de la entidad a la que va a pertenecer. En el
+      listado de atributos se le suele añadir PK (Primary Key) delante del
+      atributo el cual va ser la llave. principal.
+    </p>
+    <p>
+      Una <b>llave foránea</b> es una limitación referencial entre dos tablas.
+      La llave foránea identifica una columna o grupo de columnas en una tabla
+      (tabla hija o referendo) que se refiere a una columna o grupo de columnas
+      en otra tabla (tabla maestra o referenciada). Las columnas en la tabla
+      referendo deben ser la llave primaria u otra llave candidata en la tabla
+      referenciada
+    </p>
+    <p>
+      No hay llaves únicas, son atributos únicos. A veces es necesario que
+      algunos atributos de las entidades sean únicos, es decir, que no existan
+      datos duplicados con el mismo valor en ese atributo, sin la necesidad de
+      ser llave primaria o foranea. Se asegura que los datos sean consistentes.
+      Ejemplo, evitar que un usuario pueda crear dos cuentas de correo con el
+      mismo correo.
+    </p>
+  </body>
+</html>

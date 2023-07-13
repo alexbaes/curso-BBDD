@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo desnormalizado | BBDD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">Inicio</a>
+    </header>
+    <h1>Modelo desnormalizado</h1>
+    <p>
+      Esta tabla muestra un modelo de datos desnormalizado. Está formado por 5
+      vendas repartidas en 3 clientes diferentes y aporta infomración de los
+      productos. Por tanto, hay 3 conceptos principales, la venta, el cliente y
+      el producto.
+    </p>
+    <ul>
+      <li>
+        Venta: indica en número de venta. Son correlativas y no se pueden
+        repetir
+      </li>
+      <li>
+        Fecha: indica la fecha en la que se realizó la venta, puede haber la
+        misma fecha para diversas ventas.
+      </li>
+      <li>Cliente: nombre del cliente, debe ser único</li>
+      <li>
+        Correo: indica el correo electrónico del copmrador, debe ser único, no
+        puede haber un mismo comprador con dos correos diferentes.
+      </li>
+      <li>Teléfono: indica el teléfono del cliente, debe ser único</li>
+      <li>
+        Dirección: indica la dirección a la que se envía la compra. Un cliente
+        puede indicar más de una dirección
+      </li>
+      <li>Ciudad: indica la ciudad del cliente</li>
+      <li>País: indica el país del cliente</li>
+      <li>
+        Producto: indica el tipo de producto. Un producto puede estar en
+        diversas ventas
+      </li>
+      <li>Precio: indica el precio del producto</li>
+      <li>Cantidad: indica la cantidad de productos que se han comprado</li>
+    </ul>
+    <p>
+      Siguiendo las formas normales, con la NF1 observamos que el cliente consta
+      de nombre y apellido, por tanto, se podría separar, y la dirección igual,
+      separarla en tres, calle, número y CP. Así atomizamos.
+    </p>
+    <table>
+      <tr>
+        <th>Venta</th>
+        <th>Fecha</th>
+        <th>Cliente</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Ciudad</th>
+        <th>País</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>01/01</td>
+        <td>Juan Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+        <td>Calle 1 No.58-1 CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>02/01</td>
+        <td>Pedro Gomez</td>
+        <td>pedrogomez @gmail.com</td>
+        <td>338-765-432</td>
+        <td>Calle 2 No.85-6 CP-44100</td>
+        <td>Guadala</td>
+        <td>México</td>
+        <td>Celular</td>
+        <td>12.000</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>03/01</td>
+        <td>Ana Silva</td>
+        <td>anasilva @gmail.com</td>
+        <td>555-123-4567</td>
+        <td>Calle 3 No.33-3 CP-64000</td>
+        <td>Montey</td>
+        <td>México</td>
+        <td>Micro</td>
+        <td>2.500</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>04/01</td>
+        <td>Ana Silva</td>
+        <td>anasilva @gmail.com</td>
+        <td>555-123-4567</td>
+        <td>Calle 3 No.33-3 CP-64000</td>
+        <td>Montey</td>
+        <td>México</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>05/01</td>
+        <td>Juan Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+        <td>Calle 4 No.45-3 CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+        <td>Micro</td>
+        <td>2.500</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <h3>Modelo 1FN</h3>
+    <p>
+      Siguiendo las formas normales, con la NF1 observamos que el cliente consta
+      de nombre y apellido, por tanto, se podría separar, y la dirección igual,
+      separarla en tres, calle, número y CP. Así atomizamos.
+    </p>
+    <table>
+      <tr>
+        <th>Venta</th>
+        <th>Fecha</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Calle</th>
+        <th>Número</th>
+        <th>CP</th>
+        <th>Ciudad</th>
+        <th>País</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>01/01</td>
+        <td>Juan</td>
+        <td>Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+        <td>Calle 1</td>
+        <td>No.58-1</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>02/01</td>
+        <td>Pedro</td>
+        <td>Gomez</td>
+        <td>pedrogomez @gmail.com</td>
+        <td>338-765-432</td>
+        <td>Calle 2</td>
+        <td>No.85-6</td>
+        <td>CP-44100</td>
+        <td>Guadala</td>
+        <td>México</td>
+        <td>Celular</td>
+        <td>12.000</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>03/01</td>
+        <td>Ana</td>
+        <td>Silva</td>
+        <td>anasilva @gmail.com</td>
+        <td>555-123-4567</td>
+        <td>Calle 3</td>
+        <td>No.33-3</td>
+        <td>CP-6400</td>
+        <td>Montey</td>
+        <td>México</td>
+        <td>Micro</td>
+        <td>2.500</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>04/01</td>
+        <td>Ana</td>
+        <td>Silva</td>
+        <td>anasilva @gmail.com</td>
+        <td>555-123-4567</td>
+        <td>Calle 3</td>
+        <td>No.33-3</td>
+        <td>CP-6400</td>
+        <td>Montey</td>
+        <td>México</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>05/01</td>
+        <td>Juan</td>
+        <td>Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+        <td>Calle 4</td>
+        <td>No.45-3</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+        <td>Micro</td>
+        <td>2.500</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <p>
+      De esta manera hemos pasado unos datos desnormalizados a obtener una tabla
+      con el primer normalizado. Aún así, hay duplicados, por ejemplo, Juan
+      Perez, o Calle 3. Por tanto, se puede aplicar la segunda forma normal NF2.
+    </p>
+    <h3>Modelo 2FN</h3>
+    <p>
+      Para evitar datos duplicados aplicamos una segunda normalización. Ahora se
+      trata de eliminar las dependencias funcionales parciales, en este caso,
+      son los duplicados en los clientes. Por tanto, se puede crear una entidad
+      (tabla) separada para clientes, y almacena solo los datos de los clientes.
+      En la entidad principal (ventas) hay que añadir una llave foranea para
+      hacer referencia al cliente.
+    </p>
+    <table>
+      <tr>
+        <th>Venta</th>
+        <th>Fecha</th>
+        <th>Cliente</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>01/01</td>
+        <td>Cliente 1</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>02/01</td>
+        <td>Cliente 2</td>
+        <td>Celular</td>
+        <td>12.000</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>03/01</td>
+        <td>Cliente 3</td>
+        <td>Micro</td>
+        <td>2.500</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>04/01</td>
+        <td>Cliente 3</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>05/01</td>
+        <td>Cliente 1</td>
+        <td>Micro</td>
+        <td>2.500</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <p>
+      Creamos una nueva tabla con la información de los clientes. Podemos
+      eliminar una fila de Ana, ya que está duplicada. No podemos hacerlo con
+      Juan porqué la dirección es diferente.
+    </p>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Calle</th>
+        <th>Número</th>
+        <th>CP</th>
+        <th>Ciudad</th>
+        <th>País</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Juan</td>
+        <td>Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+        <td>Calle 1</td>
+        <td>No.58-1</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Pedro</td>
+        <td>Gomez</td>
+        <td>pedrogomez @gmail.com</td>
+        <td>338-765-432</td>
+        <td>Calle 2</td>
+        <td>No.85-6</td>
+        <td>CP-44100</td>
+        <td>Guadala</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ana</td>
+        <td>Silva</td>
+        <td>anasilva @gmail.com</td>
+        <td>555-123-4567</td>
+        <td>Calle 3</td>
+        <td>No.33-3</td>
+        <td>CP-6400</td>
+        <td>Montey</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Juan</td>
+        <td>Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+        <td>Calle 4</td>
+        <td>No.45-3</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+      </tr>
+    </table>
+    <h2>Modelo 2FN v.2</h2>
+    <p>
+      Como hemos visto, en la tabla clientes sigue habiendo duplicados, por
+      tanto, hay que retrabajar el modelo y crear una nueva entidad para extraer
+      las direcciones.
+    </p>
+    <table>
+      <tr>
+        <th>Venta (ID)</th>
+        <th>Fecha</th>
+        <th>Cliente</th>
+        <th>Dirección</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>01/01</td>
+        <td>Cliente 1</td>
+        <td>Calle 1</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>02/01</td>
+        <td>Cliente 2</td>
+        <td>Calle 2</td>
+        <td>Celular</td>
+        <td>12.000</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>03/01</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>Micro</td>
+        <td>2.500</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>04/01</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>05/01</td>
+        <td>Cliente 1</td>
+        <td>Calle 4</td>
+        <td>Micro</td>
+        <td>2.500</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <p>
+      A la entidad principal le añadimos un nuevo campo, ya que la dirección
+      estará asociada a la venta.
+    </p>
+    <table>
+      <tr>
+        <th>Cliente (ID)</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Juan</td>
+        <td>Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Pedro</td>
+        <td>Gomez</td>
+        <td>pedrogomez @gmail.com</td>
+        <td>338-765-432</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ana</td>
+        <td>Silva</td>
+        <td>anasilva @gmail.com</td>
+        <td>555-123-4567</td>
+      </tr>
+    </table>
+    <p>
+      De la tabla cliente, eliminamos los 3 campos de direcciones. A la tabla
+      dirección le añadimos un campo 'cliente' para indicar a qué cliente se
+      relaciona cada dirección
+    </p>
+    <table>
+      <tr>
+        <th>Dirección (ID)</th>
+        <th>Cliente (ID)</th>
+        <th>Calle</th>
+        <th>Número</th>
+        <th>CP</th>
+        <th>Ciudad</th>
+        <th>País</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Cliente 1</td>
+        <td>Calle 1</td>
+        <td>No.58-1</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Cliente 2</td>
+        <td>Calle 2</td>
+        <td>No.85-6</td>
+        <td>CP-44100</td>
+        <td>Guadala</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>No.33-3</td>
+        <td>CP-6400</td>
+        <td>Montey</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Cliente 1</td>
+        <td>Calle 4</td>
+        <td>No.45-3</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+      </tr>
+    </table>
+    <h2>Modelo 3FN</h2>
+    <p>
+      La tercera forma normal indica que no haya dependencias funcionales, esto
+      se logra eliminando todas las dependencias transitivas. Significa que
+      todos los campos de una entidad (o atributos) hagan referencia a una sola
+      cosa.
+    </p>
+    <p>
+      En el ejemplo que tenemos hasta ahora, la entidad principal (ventas), está
+      en la segunda forma normal, pero depende transitoriamente de los conceptos
+      del producto. Debemos hacer que todos los atributos dependan de la llave
+      principal, por tanto, hay que separar los campos que dependen del
+      producto.
+    </p>
+    <table>
+      <tr>
+        <th>Venta (ID)</th>
+        <th>Fecha</th>
+        <th>Cliente</th>
+        <th>Dirección</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>01/01</td>
+        <td>Cliente 1</td>
+        <td>Calle 1</td>
+        <td>Producto 1</td>
+
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>02/01</td>
+        <td>Cliente 2</td>
+        <td>Calle 2</td>
+        <td>Producto 2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>03/01</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>Producto 3</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>04/01</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>Producto 1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>05/01</td>
+        <td>Cliente 1</td>
+        <td>Calle 4</td>
+        <td>Producto 3</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <p>
+      A la entidad principal le creamos un campo que se llame 'producto',
+      eliminamos el campo 'precio', porqué depende del producto, pero dejamos el
+      campo 'cantidad', ya que depende de la venta.
+    </p>
+    <p>
+      En esta tabla principal tenemos una llave principal (primary key) que es
+      el Id de venta, y tres claves foraneas, 'Cliente', 'Dirección' y
+      'Producto'
+    </p>
+    <table>
+      <tr>
+        <th>Producto (ID)</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Celular</td>
+        <td>12.000</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Micro</td>
+        <td>2.500</td>
+      </tr>
+    </table>
+    <p>
+      Hemos creado la entidad nueva, 'producto', con los campos Id, Nombre y
+      Precio. Aunque haya 5 ventas, solo hay 3 productos en este ejemplo, por
+      tanto, se pueden eliminar las otras dos filas que teníamos para esta
+      tabla.
+    </p>
+    <table>
+      <tr>
+        <th>Cliente (ID)</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Juan</td>
+        <td>Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Pedro</td>
+        <td>Gomez</td>
+        <td>pedrogomez @gmail.com</td>
+        <td>338-765-432</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ana</td>
+        <td>Silva</td>
+        <td>anasilva @gmail.com</td>
+        <td>555-123-4567</td>
+      </tr>
+    </table>
+    <p>
+      De la tabla cliente, eliminamos los 3 campos de direcciones. A la tabla
+      dirección le añadimos un campo 'cliente' para indicar a qué cliente se
+      relaciona cada dirección
+    </p>
+    <table>
+      <tr>
+        <th>Dirección (ID)</th>
+        <th>Cliente (ID)</th>
+        <th>Calle</th>
+        <th>Número</th>
+        <th>CP</th>
+        <th>Ciudad</th>
+        <th>País</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Cliente 1</td>
+        <td>Calle 1</td>
+        <td>No.58-1</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Cliente 2</td>
+        <td>Calle 2</td>
+        <td>No.85-6</td>
+        <td>CP-44100</td>
+        <td>Guadala</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>No.33-3</td>
+        <td>CP-6400</td>
+        <td>Montey</td>
+        <td>México</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Cliente 1</td>
+        <td>Calle 4</td>
+        <td>No.45-3</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>México</td>
+      </tr>
+    </table>
+    <h2>Modelo 4FN</h2>
+    <p>
+      La cuarta y quinta forma son versiones más estrictas y restrictivas con
+      las dependencias transitivas. Por tanto, en este punto hay que reevaluar
+      si tenemos el modelo optimizado.
+    </p>
+    <table>
+      <tr>
+        <th>Venta (ID)</th>
+        <th>Fecha</th>
+        <th>Cliente</th>
+        <th>Dirección</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>01/01</td>
+        <td>Cliente 1</td>
+        <td>Calle 1</td>
+        <td>Producto 1</td>
+
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>02/01</td>
+        <td>Cliente 2</td>
+        <td>Calle 2</td>
+        <td>Producto 2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>03/01</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>Producto 3</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>04/01</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>Producto 1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>05/01</td>
+        <td>Cliente 1</td>
+        <td>Calle 4</td>
+        <td>Producto 3</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <p>
+      En la entidad 'venta' está todo atomizado y los campos/atributos hacen
+      referencia a la venta y las diferentes llaves foraneas para relacionarse
+      con las otras tablas.
+    </p>
+    <table>
+      <tr>
+        <th>Producto (ID)</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Laptop</td>
+        <td>25.000</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Celular</td>
+        <td>12.000</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Micro</td>
+        <td>2.500</td>
+      </tr>
+    </table>
+    <p>
+      En la entidad 'Producto' está todo atomizado y los campos/atributos hacen
+      referencia al producto.
+    </p>
+    <table>
+      <tr>
+        <th>Cliente (ID)</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Juan</td>
+        <td>Perez</td>
+        <td>juan.perez @gmail.com</td>
+        <td>551-234-567</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Pedro</td>
+        <td>Gomez</td>
+        <td>pedrogomez @gmail.com</td>
+        <td>338-765-432</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ana</td>
+        <td>Silva</td>
+        <td>anasilva @gmail.com</td>
+        <td>555-123-4567</td>
+      </tr>
+    </table>
+    <p>
+      En la entidad 'Cliente' está todo atomizado y los campos/atributos hacen
+      referencia al cliente.
+    </p>
+    <table>
+      <tr>
+        <th>Dirección (ID)</th>
+        <th>Cliente (ID)</th>
+        <th>Calle</th>
+        <th>Número</th>
+        <th>CP</th>
+        <th>Ciudad</th>
+        <th>País</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Cliente 1</td>
+        <td>Calle 1</td>
+        <td>No.58-1</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Cliente 2</td>
+        <td>Calle 2</td>
+        <td>No.85-6</td>
+        <td>CP-44100</td>
+        <td>Guadala</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Cliente 3</td>
+        <td>Calle 3</td>
+        <td>No.33-3</td>
+        <td>CP-6400</td>
+        <td>Montey</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Cliente 1</td>
+        <td>Calle 4</td>
+        <td>No.45-3</td>
+        <td>CP-03100</td>
+        <td>CDMX</td>
+        <td>1</td>
+      </tr>
+    </table>
+    <p>
+      En la entidad 'Dirección' sí se puede optimizar. En este caso todas las
+      ventas hace referencia al país México, pero podrían haber más países. El
+      campo País a partir de ahora hará referencia al Id de la nueva tabla
+      'País'.
+    </p>
+    <table>
+      <tr>
+        <th>País (ID)</th>
+        <th>Nombre</th>
+        <th>Dominio</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>México</td>
+        <td>mx</td>
+      </tr>
+    </table>
+    <p>
+      Hemos creado una nueva entidad llamada 'País', para listar todos los
+      países disponibles
+    </p>
+    <p>
+      En este caso trabajado no hace falta aplicar una quinta normalización.
+    </p>
+  </body>
+</html>

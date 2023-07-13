@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Normalización | BBDD</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">Inicio</a>
+    </header>
+    <h1>Modelo entidad relación en las BBDD</h1>
+    <p>
+      Las formas normales en las bases de datos son reglas o principios de
+      diseño que se aplican para organizar y estructurar los datos de manera
+      eficiente y libre de redundancias. Estas normas están destinadas a mejorar
+      la integridad, consistencia y capacidad de mantenimiento de una base de
+      datos.
+    </p>
+    <p>
+      Existen varias formas normales, como la Primera Forma Normal (1NF),
+      Segunda Forma Normal (2NF), Tercera Forma Normal (3NF), y así
+      sucesivamente. Cada forma normal tiene criterios específicos que deben
+      cumplirse para que una base de datos esté en esa forma.
+    </p>
+    <p>
+      En general, las formas normales se centran en la eliminación de
+      redundancias y dependencias innecesarias entre los datos. Se busca dividir
+      la información en entidades lógicas y relacionarlas adecuadamente a través
+      de claves primarias y foráneas. Además, se buscan evitar las dependencias
+      parciales o transitivas, donde una columna depende de otra o de una
+      combinación de varias columnas.
+    </p>
+    <p>
+      Al cumplir con las formas normales, se logra una estructura de base de
+      datos más eficiente, flexible y escalable. Permite reducir la duplicación
+      de datos, mejorar el rendimiento de las consultas y facilitar el
+      mantenimiento y la actualización de la base de datos a medida que
+      evoluciona el sistema.
+    </p>
+    <h2>Primera forma normal (1NF)</h2>
+    <p>
+      En esta forma, se eliminan las repeticiones de datos agrupándolos en
+      entidades separadas y estructurando las tablas correctamente. Cada columna
+      en una tabla debe contener un solo valor atómico y no repetido.
+    </p>
+    <p><b>Ejemplo</b></p>
+    <p>
+      Supongamos que tienes una tabla de "Estudiantes" con columnas como "ID",
+      "Nombre" y "Materias". Para cumplir con la 1NF, debes asegurarte de que
+      cada columna contenga un solo valor y que no haya repeticiones de datos.
+      Por lo tanto, podrías descomponer la tabla en dos: "Estudiantes" con "ID"
+      y "Nombre", y "Materias" con "ID" y "Materia".
+    </p>
+    <h2>Segunda forma normal (2NF)</h2>
+    <p>
+      En esta forma, se asegura que no haya dependencias parciales en una tabla.
+      Significa que cada columna en una tabla debe depender completamente de la
+      clave primaria y no de solo una parte de ella.
+    </p>
+    <p><b>Ejemplo</b></p>
+    <p>
+      Imaginemos una tabla de "Pedidos" con columnas como "ID Pedido", "ID
+      Producto", "Nombre Producto" y "Precio". Si el "Precio" depende del "ID
+      Producto", entonces no cumple con la 2NF. Para resolverlo, puedes
+      descomponer la tabla en dos: "Pedidos" con "ID Pedido" y "ID Producto", y
+      "Productos" con "ID Producto", "Nombre Producto" y "Precio".
+    </p>
+    <h2>Tercera forma normal (3NF)</h2>
+    <p>
+      En esta forma, se eliminan las dependencias transitivas entre las columnas
+      no clave de una tabla. Cada columna no clave debe depender solo de la
+      clave primaria y no de otras columnas no clave.
+    </p>
+    <p><b>Ejemplo</b></p>
+    <p>
+      Supongamos que tienes una tabla de "Empleados" con columnas como "ID
+      Empleado", "Nombre", "ID Departamento" y "Nombre Departamento". Si el
+      "Nombre Departamento" depende solo del "ID Departamento", entonces la
+      tabla cumple con la 3NF. No habría necesidad de descomponerla más, ya que
+      cada columna no clave depende únicamente de la clave primaria.
+    </p>
+    <h2>Cuarta forma normal (4NF)</h2>
+    <p>También se le conoce como "Cuarta Forma Normal Boyce-Codd" (BCNF)</p>
+    <p>
+      En esta forma, se eliminan las dependencias multivaluadas entre las
+      columnas no clave de una tabla. Esto significa que si hay una dependencia
+      entre dos columnas no clave, no deben existir otras columnas que dependan
+      de una combinación de esas dos columnas.
+    </p>
+    <p><b>Ejemplo</b></p>
+    <p>
+      Imaginemos una tabla de "Clientes" con columnas como "ID Cliente", "ID
+      Producto" y "Comentarios". Si existen dependencias multivaluadas entre "ID
+      Cliente" y "Comentarios" en función de "ID Producto", entonces no cumple
+      con la 4NF. Para resolverlo, podrías descomponer la tabla en dos:
+      "Clientes" con "ID Cliente" y "ID Producto", y "Comentarios" con "ID
+      Producto" y "Comentario".
+    </p>
+    <h2>Quinta forma normal (5NF)</h2>
+    <p>
+      También se le conoce como "Quinta Forma Normal Proyección-Union" (PJ/NF) o
+      "Quinta Forma Normal de la Unión" (5NFU) o "Dominio-Clave".
+    </p>
+    <p>
+      En esta forma, se eliminan las dependencias de unión y las redundancias en
+      una tabla. Se descomponen las tablas para minimizar la duplicación de
+      datos y permitir una mayor flexibilidad en las consultas y
+      actualizaciones.
+    </p>
+    <hr />
+    <p>
+      Cada forma normal sucesiva garantiza una mayor normalización y reduce las
+      redundancias y anomalías en la base de datos. Sin embargo, no todas las
+      bases de datos necesitan cumplir con todas las formas normales en todos
+      los casos. La elección de las formas normales adecuadas depende de los
+      requerimientos y características específicas del sistema y su diseño.
+    </p>
+    <p><b>Ejemplo</b></p>
+    <p>
+      Supongamos que tienes una tabla de "Clientes" con columnas como "ID
+      Cliente", "Nombre Cliente" y "Dirección". Si tienes información de
+      contacto adicional como "Teléfono" y "Correo electrónico" que solo se
+      aplica a ciertos clientes, podrías descomponer la tabla en dos: "Clientes"
+      con "ID Cliente" y "Nombre Cliente", y "Información de Contacto" con "ID
+      Cliente", "Teléfono" y "Correo electrónico". Esto permite evitar
+      dependencias de unión y redundancias en la tabla principal.
+    </p>
+  </body>
+</html>
