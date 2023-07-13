@@ -7,8 +7,8 @@
 - cliente_id **(PK)**
 - nombre
 - apellidos
-- telefono
-- email
+- telefono **(UQ)**
+- email **(UQ)**
 - direccion
 - cp
 - ciudad
@@ -39,6 +39,13 @@
 
 ### paises **(EC)**
 
-- pais_id
+- pais_id **(PK)**
 - nombre
-- dominio
+- dominio **(UQ)**
+
+## Relaciones
+
+- **Un cliente** pertenece a **un país** (_1 - 1_).
+- **Un cliente** genera **varias ventas** (_1 - M_).
+- **Una venta** tiene **varios artículos** (_1 - M_).
+- **Un artículo** es **un producto** (\_1 - 1).
